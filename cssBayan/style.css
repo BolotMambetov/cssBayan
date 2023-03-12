@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url("../fonts/Robotobold.ttf");
+    font-weight: bold;
+}
+
+
+body {
+    font-family: Roboto, sans-serif;
+    margin: 20 auto;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    
+}
+
+.accordion-tab input,
+.accordion-item-content {
+    display: none;
+}
+
+.accordion-tab {
+    color: rgb(8, 8, 8);
+    border-bottom: 1px solid rgb(198, 198, 198);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.tab-title:hover + div { 
+display:contents;
+transition:all 1s;
+
+}
+
+.tab-title {
+    font-size: 20px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    
+}
+
+.tab-title::after {
+    position: absolute;
+    top: 20%;
+    right: 15px;
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+    background-image: url(images/icon-+.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+}
+
+.accordion-item-image {
+    margin: 0 auto;
+    display: flex;
+    transition:all 1s;
+    
+}
+
+.accordion-item-image:hover {
+    width: 400px;
+    transition: all 1s;
+
+}
+
+.accordion-tab :checked + .tab-title {
+    color: blue;
+}
+
+.accordion-tab :checked + .tab-title::after {
+    position: absolute;
+    top: 20%;
+    right: 15px;
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+    background-image: url(images/icon-x.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-shrink: 0;
+    
+}
+
+.accordion-tab :checked ~ .accordion-item-content {
+    display: block;
+}
+
